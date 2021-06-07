@@ -1,42 +1,40 @@
-body {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
 }
 
 .environment {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: auto;
-  width: 40%;
-  padding: 5%;
+  height: 100%;
+  width: auto;
+  padding: 9.5rem;
   border: 2px solid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: radial-gradient(blue, purple);
-  display: flex;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  background-image: radial-gradient(blue, #dc67dc);
 }
 
 .board {
   background-color: red;
-  padding: 15px;
-  margin: 10px;
+  width: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  border: solid 2px aquamarine;
+  padding: 25px;
 }
 
 .cell {
   height: 60px;
   width: 60px;
-  float: left;
   margin: 1px;
   background-color: wheat;
   display: -webkit-box;
@@ -60,5 +58,36 @@ body {
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  font-size: 42px;
+  color: beige;
+  z-index: 99;
+  -webkit-animation: animateResult 4s infinite ease-in;
+          animation: animateResult 4s infinite ease-in;
+  -webkit-transition: ease-in-out;
+  transition: ease-in-out;
+  display: none;
+}
+
+@-webkit-keyframes animateResult {
+  from {
+    background-color: pink;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+
+@keyframes animateResult {
+  from {
+    background-color: pink;
+  }
+  to {
+    background-color: yellow;
+  }
+}
+
+.btn {
+  display: none;
+  background-image: radial-gradient(pink, orange, blue);
 }
 /*# sourceMappingURL=style.css.map */
