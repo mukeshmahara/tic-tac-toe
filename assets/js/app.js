@@ -14,8 +14,9 @@ let box7=document.getElementById("cell7");
 let box8=document.getElementById("cell8")
 let box9=document.getElementById("cell9")
 
-result = document.getElementById("result");
+showResult = document.getElementById("show-result");
 board = document.getElementById("board");
+btn = document.getElementById("btn")
 let winCondition = [
    
     // rows
@@ -55,16 +56,16 @@ function play(  ){
         currentPlayer = state ? player1 : player2
         box1.innerHTML = currentPlayer;
         
-        
+        count++
         if (currentPlayer == player1) {
             player1Box.push(box1)
             
             console.log("player1 Boxes :",player1Box)
-            checkWin(player1Box,player1)
+            checkWin(player1Box,player1,count)
         } else {
             player2Box.push(box1)
             console.log("player2 Boxes :",player2)
-            checkWin(player2Box,player2);                    
+            checkWin(player2Box,player2,count);                    
         }
 
         box1.style.cursor = "not-allowed"
@@ -74,6 +75,7 @@ function play(  ){
    
 
     box2.addEventListener('click',(event)=>{
+        count++
 
     
         state = switchTurn();
@@ -82,11 +84,11 @@ function play(  ){
         if (currentPlayer == player1) {
             player1Box.push(box2)
             console.log("player1 Boxes :",player1Box)
-            checkWin(player1Box,player1)
+            checkWin(player1Box,player1,count)
         } else {
             player2Box.push(box2)
             console.log("player2 Boxes :",player2Box)
-            checkWin(player2Box,player2);                    
+            checkWin(player2Box,player2,count);                    
         }
         
         box2.style.cursor = "not-allowed"
@@ -96,6 +98,7 @@ function play(  ){
 
     
     box3.addEventListener('click',(event)=>{
+        count++
 
        
         state = switchTurn();
@@ -104,17 +107,18 @@ function play(  ){
         if (currentPlayer == player1) {
             player1Box.push(box3)
             console.log("player1 Boxes :",player1Box)
-            checkWin(player1Box,player1)
+            checkWin(player1Box,player1,count)
         } else {
             player2Box.push(box3)
             console.log("player2 Boxes ",player2Box)
-            checkWin(player2Box,player2);                    
+            checkWin(player2Box,player2,count);                    
         }
         box3.style.cursor = "not-allowed"
         
     },{once : true});
     
     box4.addEventListener('click',(event)=>{
+        count++
 
       
         
@@ -127,12 +131,12 @@ function play(  ){
         if (currentPlayer == player1) {
             player1Box.push(box4)
             console.log("player1 Boxes :",player1Box)
-            checkWin(player1Box,player1)
+            checkWin(player1Box,player1,count)
         } else {
             player2Box.push(box4)
             console.log("player 2 : ",player2Box)
 
-            checkWin(player2Box,player2);                    
+            checkWin(player2Box,player2,count);                    
         }
         
         box4.style.cursor = "not-allowed"
@@ -141,6 +145,7 @@ function play(  ){
     
     
     box5.addEventListener('click',(event)=>{
+        count++
 
      
         state = switchTurn();
@@ -149,12 +154,12 @@ function play(  ){
         if (currentPlayer == player1) {
             player1Box.push(box5)
             console.log("player1 Boxes :",player1Box)
-            checkWin(player1Box,player1)
+            checkWin(player1Box,player1,count)
         } else {
             player2Box.push(box5)
             console.log("player 2 : ",player2Box)
 
-            checkWin(player2Box,player2);                    
+            checkWin(player2Box,player2,count);                    
         }
 
         box5.style.cursor = "not-allowed"
@@ -165,6 +170,7 @@ function play(  ){
     
     box6.addEventListener('click',(event)=>{
 
+        count++
        
         
         state = switchTurn();
@@ -174,12 +180,12 @@ function play(  ){
         if (currentPlayer == player1) {
             player1Box.push(box6)
             console.log("player1 Boxes :",player1Box)
-            checkWin(player1Box,player1)
+            checkWin(player1Box,player1,count)
         } else {
             player2Box.push(box6)
             console.log("player 2 : ",player2Box)
 
-            checkWin(player2Box,player2);                    
+            checkWin(player2Box,player2,count);                    
         }
         box6.style.cursor = "not-allowed"
         
@@ -188,6 +194,7 @@ function play(  ){
     // let box7=document.getElementById("cell7")
     
     box7.addEventListener('click',(event)=>{
+        count++
 
         state = switchTurn();
         currentPlayer = state ? player1 : player2
@@ -198,12 +205,12 @@ function play(  ){
         if (currentPlayer == player1) {
             player1Box.push(box7)
             console.log("player1 Boxes :",player1Box)
-            checkWin(player1Box,player1)
+            checkWin(player1Box,player1,count)
         } else {
             player2Box.push(box7)
             console.log("player 2 : ",player2Box)
 
-            checkWin(player2Box,player2);                    
+            checkWin(player2Box,player2,count);                    
         }
         box7.style.cursor = "not-allowed"
         
@@ -213,6 +220,7 @@ function play(  ){
     // let box8=document.getElementById("cell8")
     
     box8.addEventListener('click',(event)=>{
+        count++
 
         state = switchTurn();
         currentPlayer = state ? player1 : player2
@@ -221,11 +229,11 @@ function play(  ){
         if (currentPlayer == player1) {
             player1Box.push(box8)
             console.log("player1 Boxes :",player1Box)
-            checkWin(player1Box,player1)
+            checkWin(player1Box,player1,count)
         } else {
             player2Box.push(box8)
             console.log("player 2 : ",player2Box)
-            checkWin(player2Box,player2);                    
+            checkWin(player2Box,player2,count);                    
         }
         box8.style.cursor = "not-allowed"
         
@@ -235,6 +243,7 @@ function play(  ){
     // let box9=document.getElementById("cell9")
     
     box9.addEventListener('click',(event)=>{
+        count++
 
         state = switchTurn();
         
@@ -243,12 +252,12 @@ function play(  ){
         if (currentPlayer == player1) {
             player1Box.push(box9)
             console.log("player1 Boxes :",player1Box)
-            checkWin(player1Box,player1)
+            checkWin(player1Box,player1,count)
         } else {
             player2Box.push(box9)
             console.log("player 2 : ",player2Box)
 
-            checkWin(player2Box,player2);                    
+            checkWin(player2Box,player2,count);                    
         }
         box9.style.cursor = "not-allowed"
         
@@ -264,10 +273,11 @@ function switchTurn(){
 }
 
 
-function checkWin(boxes,player) {
+function checkWin(boxes,player,count) {
     console.log("I'am Player :",player)
+    console.log(count)
 
-    console.log(allBox.length)
+
     if(
         (box1.innerHTML == player && box2.innerHTML ==player && box3.innerHTML == player)
         ||
@@ -286,15 +296,29 @@ function checkWin(boxes,player) {
         (box3.innerHTML == player && box5.innerHTML == player && box7.innerHTML == player)
     
     ){
-
-        result.innerHTML = player + " WINS"
-        
         board.style.display = "none"
-
-    }else if(allBox.length==0){
-        console
-        document.getElementById("result").innerHTML = "Game Draw"
+        console.log(player,"Wins")
+        showResult.style.display = "block"
+        showResult.innerHTML = player + " WINS"
         
+        btn.style.display = "block"
+        
+
+    }else if(count==9){
+
+        board.style.display = "none"
+        
+        showResult.style.display = "block"
+        showResult.innerHTML = "GAME DRAW"
+        btn.style.display = "block"
+
     }
   
 }     
+
+btn.addEventListener('click',()=>{
+    board.style.display = "grid"
+    showResult.style.display = "none"
+    btn.style.display = "none"
+    location.reload()
+})
