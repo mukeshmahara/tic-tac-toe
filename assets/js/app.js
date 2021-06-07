@@ -304,7 +304,7 @@ function checkWin(boxes,player,count) {
         btn.style.display = "block"
         
 
-    }else if(count==9){
+    }else if(count==9 ){
 
         board.style.display = "none"
         
@@ -312,6 +312,9 @@ function checkWin(boxes,player,count) {
         showResult.innerHTML = "GAME DRAW"
         btn.style.display = "block"
 
+    }
+    else{
+        
     }
   
 }     
